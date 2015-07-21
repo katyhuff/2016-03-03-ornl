@@ -1,0 +1,613 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+                <title>PyRK: Python for Reactor Kinetics</title>
+
+                <meta name="description" content="
+                Talk for SciPy 2015,
+                PyRK, Python for Reactor Kinetics
+
+                ">
+		<meta name="author" content="Kathryn (Katy) Huff">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.min.css">
+		<link rel="stylesheet" href="css/theme/simple.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                                <section>
+                                <h1>PyRK</h1>
+                                <h3>Python For Reactor Kinetics</h3>
+                                        <br/>
+                                        <h3>Kathryn Huff</h3>
+                                        <h3>SciPy Conference, July 8, 2015</h3>
+                                </section>
+
+                                <section>
+                                        <section>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://software-carpentry.org"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/software-carpentry-450x254.png?itok=0XnUCwrr"
+                                                  alt="Software Carpentry"></a>
+                                                <a
+                                                  href="http://thehackerwithin.github.io"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://thehackerwithin.github.io/images/thw_icon.png"
+                                                  alt="THW"></a>
+                                                <a
+                                                  href="http://physics.codes"
+                                                  class="image"><img
+                                                  width="20%"
+                                                  src="http://physics.codes/images/ecip_er.jpg"
+                                                  alt="book"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://fuelcycle.org"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://fuelcycle.org/_images/logo2_bike.gif"
+                                                  alt="cyclus"></a>
+                                                <a href="http://pyne.io"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/pyne-450x254.png?itok=rdkh0T8e"
+                                                  alt="pyne"></a>
+                                                <span class="fragment">
+                                                <a href="http://pyrk.github.io"
+                                                  class="image"><img
+                                                  width="30%"
+                                                  src="http://pyrk.github.io/_images/logo.png"
+                                                  alt="pyrk"></a>
+                                                </span>
+                                        </section>
+                                </section>
+				<section>
+                                        <section>
+                                                <a href="http://pyrk.github.io"
+                                                  class="image"><img
+                                                  src="http://pyrk.github.io/_images/logo.png"
+                                                  alt="pyrk"></a>
+                                                <br/>
+                                                <span class="fragment">
+                                                PyRK: Python for Reactor Kinetics
+                                                </span>
+                                        </section>
+					<section>
+                                        <h2>Review of Nuclear Reactor Kinetics</h2>
+                                                <a href="http://rationalwiki.org/w/images/thumb/0/0e/Fission.svg/800px-Fission.svg.png"
+                                                  class="image"><img
+                                                  src="http://rationalwiki.org/w/images/thumb/0/0e/Fission.svg/800px-Fission.svg.png"
+                                                  alt="Fission."></a>
+                                                <p class="fragment">\[\sigma(E,\vec{r},\hat{\Omega},T,t,x,i)\]<p>
+                                        </section>
+                                        <section>
+                                                <a href="http://wwwndc.jaea.go.jp/j40fig/jpeg/u235_f1.jpg"
+                                                  class="image"><img
+                                                  src="http://wwwndc.jaea.go.jp/j40fig/jpeg/u235_f1.jpg"
+                                                  alt="Resonances"></a>
+                                        </section>
+                                        <section>
+                                                <a href="http://rationalwiki.org/w/images/thumb/1/1f/Chainreaction.svg/715px-Chainreaction.svg.png"
+                                                  class="image"><img
+                                                  src="http://rationalwiki.org/w/images/thumb/1/1f/Chainreaction.svg/715px-Chainreaction.svg.png"
+                                                  alt="Chain reaction"></a>
+                                          <p class="fragment">\[k\]<p>
+                                        </section>
+                                        <section>
+                                                <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ThermalFissionYield.svg/800px-ThermalFissionYield.svg.png"
+                                                  class="image"><img
+                                                  src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ThermalFissionYield.svg/800px-ThermalFissionYield.svg.png"
+                                                  alt="Fission yield"height=400></a>
+                                          <p class="fragment">\[i\]<p>
+                                        </section>
+                                        <section> <a href="http://rationalwiki.org/wiki/File:Fission.svg"
+                                                  class="image"><img
+                                                  src="./images/delayed_neutron.png"
+                                                  alt="Delayed Neutrons"height=400></a>
+                                          <p class="fragment">\[\beta_i\]<p>
+                                        </section>
+                                        <section>
+                                        <h2>Reactivity</h2>
+\[
+\begin{align}
+   \rho &= \frac{k-1}{k}\\
+   \rho &= \mbox{reactivity}\\
+   k &= \mbox{"neutron multiplication factor"}\\
+     &= \frac{\mbox{neutrons causing fission}}{\mbox{neutrons produced by fission}}.
+\end{align}
+\]
+</section>
+<section>
+<h2>PRKE</h2>
+\[
+   \rho(t) = \rho_0 + \rho_f(t) + \rho_{ext}
+\]
+<br/>
+where
+<br/>
+\[
+\begin{align}
+   \rho(t) &= \mbox{total reactivity}\\
+   \rho_f(t) &= \mbox{reactivity from feedback}\\
+   \rho_{ext}(t) &= \mbox{external reactivity insertion}\\
+   \rho_f(t) &= \sum_i \alpha_i\frac{\delta T_i}{\delta t}\\
+   T_i &= \mbox{temperature of component i}\\
+   \alpha_i &= \mbox{temperature reactivity coefficient of i}.
+\end{align}
+\]
+</section>
+                                        <section>
+                                                 <a href=""
+                                                  class="image"><img
+                                                  src="./images/feedback.png"
+                                                  alt="Feedback"height=400></a>
+                                        </section>
+
+<section>
+<small>
+\[
+   \frac{d}{dt}\left[
+    \begin{array}{c}
+      p\\
+      \zeta_1\\
+      .\\
+      \zeta_j\\
+      .\\
+      \zeta_J\\
+      \omega_1\\
+      .\\
+      \omega_k\\
+      .\\
+      \omega_K\\
+      T_{i}\\
+      .\\
+      T_{I}\\
+    \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ c }
+        \frac{\rho(t,T_{i},\cdots)-\beta}{\Lambda}p +
+        \displaystyle\sum^{j=J}_{j=1}\lambda_{d,j}\zeta_j\\
+        \frac{\beta_1}{\Lambda} p - \lambda_{d,1}\zeta_1\\
+        .\\
+        \frac{\beta_j}{\Lambda}p-\lambda_{d,j}\zeta_j\\
+        .\\
+        \frac{\beta_J}{\Lambda}p-\lambda_{d,J}\zeta_J\\
+        \kappa_1p - \lambda_{FP,1}\omega_1\\
+        .\\
+        \kappa_kp - \lambda_{FP,k}\omega_k\\
+        .\\
+        \kappa_{k p} - \lambda_{FP,k}\omega_{k}\\
+        f_{i}(p, C_{p,i}, T_{i}, \cdots)\\
+        .\\
+        f_{I}(p, C_{p,I}, T_{I}, \cdots)\\
+      \end{array}
+      \right]
+\]
+</small>
+</section>
+<section>
+<h2>What Was That?</h2>
+<small>
+\[
+\begin{align}
+    p &= \mbox{ reactor power }\\
+    \rho(t,&T_{fuel},T_{cool},T_{mod}, T_{refl}) = \mbox{ reactivity}\\
+    \beta &= \mbox{ fraction of neutrons that are delayed}\\
+    \beta_j &= \mbox{ fraction of delayed neutrons from precursor group j}\\
+    \zeta_j &= \mbox{ concentration of precursors of group j}\\
+    \lambda_{d,j} &= \mbox{ decay constant of precursor group j}\\
+    \Lambda &= \mbox{ mean generation time }\\
+    \omega_k &= \mbox{ decay heat from FP group k}\\
+    \kappa_k &= \mbox{ heat per fission for decay FP group k}\\
+    \lambda_{FP,k} &= \mbox{ decay constant for decay FP group k}\\
+    T_i &= \mbox{ temperature of component i}
+\end{align}
+                                        \]
+</small>
+                                        </section>
+                                        <section>
+                                                <h2>Simulation Methods</h2>
+                                                <ul>
+                                                  <li>Monte Carlo Methods</li>
+                                                  <li>Deterministic Methods</li>
+                                                  <li>Hybrid Methods</li>
+                                                  <li>Other keywords...</li>
+                                                  <ul>
+                                                  <li>lattice codes</li>
+                                                  <li>ray tracing algorithms</li>
+                                                  <li>acceleration schemes</li>
+                                                  <li>adjoint methods</li>
+                                                  <li>...</li>
+                                                </ul>
+                                                </ul>
+
+                                        </section>
+                               </section>
+                               <section>
+
+                                        <section>
+                                                <h2>PyRK</h2>
+                                                <ul>
+                                                <li>6-precursor-group,</li>
+                                                <li>11-decay-group PRKE model</li>
+                                                <li>Lumped Parameter thermal hydraulics model</li>
+                                                <li>Object-oriented, geometry and material agnostic framework</li>
+                                                <ul>
+                                        </section>
+<section>
+  <h2>Quality Control</h2>
+  <ul>
+    	<li> Unit Checking: Pint (github.com/pint)</li>
+    	<li> Version Control: Git & GitHub (github.com/pyrk/pyrk)</li>
+    	<li> Automated Documentation: Sphinx (pyrk.github.io)</li>
+    	<li> Test Suite: nose</li>
+    	<li> Continuous Integration: Travis (travis-ci.org/pyrk/pyrk)</li>
+    	<li> Plotting: Matplotlib</li>
+    	<li> ODE solves: SciPy</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Unit Checking</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/pint_pyrk.png"
+                                                  width="50%"
+                                                  alt="Pint"></a>
+<br/>In PyRK, the Pint package (pint.readthedocs.org/en/0.6/) is used keeping track
+of units, converting between them, and throwing errors when unit
+conversions are not sane.
+</section>
+<section>
+  <h2>Version Control</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/github_pyrk.png"
+                                                  width="50%"
+                                                  alt="Docs"></a>
+<br/>Keeping track of versions of the code makes it possible to experiment without
+fear and placing the code online encourages use and collaboration.
+</section>
+<section>
+  <h2>Automated Documentation</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/doc_pyrk.png"
+                                                  width="50%"
+                                                  alt="Docs"></a>
+<br/>Automated documentation creates a browsable website explaining the most recent version of the code.
+</section>
+<section>
+  <h2>Test Suite</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/tests_pyrk.png"
+                                                  width="50%"
+                                                  alt="Docs"></a>
+<br/>The classes and functions that make up the code are tested individually for
+robustness using nose.
+</section>
+
+<section>
+  <h2>Continuous Integration</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/tests_pyrk.png"
+                                                  width="50%"
+                                                  alt="Docs"></a>
+<br/>The tests are run every time a change is made to the repository online. The results are public. If a main branch has a failed test, I get
+    an email.
+</section>
+<section>
+<h2>PyRK: Design</h2>
+<ul>
+	<li><b>SimInfo</b> : Reads the input file, manages the solution matrix, Timer, and communication between neutronics and thermal hydraulics.</li>
+	<li><b>Neutronics</b> : calculates $dP/dt$, $d\omega_j/dt$, based on $dT_i/dt$ and the external reactivity insertion.  </li>
+	<li><b>THSystem</b> : manages various THComponents, facilitates their communication.  </li>
+	<li><b>THComponent</b> : Conducts lumped parameter calculation. Other thermal models can inherit from it and replace it in the simulation.</li>
+	<li><b>Material</b> : A class for defining the intensive properties of a material ($c_p$, $\rho$, $k_{th}$). Subclasses include <b>Flibe</b>,
+Graphite</b>, <b>SS316</b>, and others.</li>
+</ul>
+</section>
+
+<section>
+  <h2>Neutronics : Reactivity Insertion Model</h2>
+                                                <a href=""
+                                                  class="image"><img
+                                                  src="./images/ri.png"
+                                                  width="100%"
+                                                  alt="reactivity insertion"></a>
+<br/>The reactivity insertion that drives the simulator can be selected
+    and customized from three models.
+</section>
+
+
+<section>
+  <h2>Lumped Parameter Heat Transfer</h2>
+<small>
+The heat flow out of body $i$ is the sum of surface heat flow by conduction,
+convection, radiaion, and other mechanisms to each adjacent body, $j$:
+\[
+\begin{align}
+Q &= Q_i + \sum_j Q_{ij}\\
+  &=Q_i +  \sum_j\frac{T_{i} - T_{j}}{R_{th,ij}}\\
+\dot{Q} &= \mbox{total heat flow out of body i }[J\cdot s^{-1}]\\
+Q_i &= \mbox{other heat transfer, a constant }[J\cdot s^{-1}]\\
+T_i &= \mbox{temperature of body i }[K]\\
+T_j &= \mbox{temperature of body j }[K]\\
+j &= \mbox{adjacent bodies }[-]\\
+R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
+\end{align}
+\]
+</small>
+</section>
+                                </section>
+                                <section>
+                                        <section>
+                                         <h3>Minimal Example</h3>
+                                         <br/><b>Sodium Cooled Fast Reactor</b>
+                                         <br/>
+                                         <ul>
+                                                 <li>Sodium Coolant</li>
+                                                 <li>Metal Fuel</li>
+                                                 <li>Steady Inlet Temperature</li>
+                                                 <li>Impulse Reactivity Insertion</li>
+                                        </section>
+                                        <section>
+                                         <h3>Impulse Reactivity Insertion</h3>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/pyrk-scipy-2015/gh-pages/images/reactivity.png"
+                                                    class="image"><img
+                                                    width="60%"
+                                                    src="./images/reactivity_insertion.png"
+                                                    alt="reactivity insertion"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Impulse Reactivity Insertion</h3>
+                                                <span class="fragment">
+                                                <pre><code class="python">
+# External Reactivity
+from reactivity_insertion \
+import ImpulseReactivityInsertion as pulse
+rho_ext = pulse(timer=ti,
+                t_start=1.0*units.seconds,
+                t_end=2.0*units.seconds,
+                rho_init=0.0*units.delta_k,
+                rho_max=0.05*units.delta_k)
+                                                </code></pre>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Impulse Reactivity Insertion</h3>
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/pyrk-scipy-2015/gh-pages/images/reactivity.png"
+                                                    class="image"><img
+                                                    width="45%"
+                                                    src="./images/insertion.png"
+                                                    alt="reactivity insertion"></a>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/pyrk-scipy-2015/gh-pages/images/reactivity.png"
+                                                    class="image"><img
+                                                    width="43%"
+                                                    src="./images/power.png"
+                                                    alt="pwer"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Components</h3>
+                                                <span class="fragment">
+                                                <pre><code class="python">
+   fuel = th.THComponent(name="fuel",
+                         mat=SFRMetal(name="sfrfuel"),
+                         vol=vol_fuel,
+                         T0=t_fuel,
+                         alpha_temp=alpha_f,
+                         timer=ti,
+                         heatgen=True,
+                         power_tot=power_tot)
+
+   cool = th.THComponent(name="cool",
+                         mat=Sodium(name="sodiumcoolant"),
+                         vol=vol_cool,
+                         T0=t_cool,
+                         alpha_temp=alpha_c,
+                         timer=ti)
+
+   inlet = th.THComponent(name="inlet",
+                         mat=Sodium(name="sodiumcoolant"),
+                         vol=vol_cool,
+                         T0=t_inlet,
+                         alpha_temp=0.0*units.pcm/units.K,
+                         timer=ti)
+                                                </code></pre>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Heat Transfer</h3>
+                                                <span class="fragment">
+                                                <pre><code class="python">
+   # The clad convects with the coolant
+   fuel.add_convection('cool', h=h_cool, area=a_fuel)
+   cool.add_convection('fuel', h=h_cool, area=a_fuel)
+
+   # The coolant flows
+   cool.add_mass_trans('inlet', H=h_core, u=v_cool)
+
+   components = [fuel, cool, inlet]
+                                                </code></pre>
+                                        </section>
+                                        <section>
+                                         <h3>Component Temperatures</h3>
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/pyrk-scipy-2015/gh-pages/images/reactivity.png"
+                                                    class="image"><img
+                                                    width="45%"
+                                                    src="./images/insertion.png"
+                                                    alt="reactivity insertion"></a>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="http://physics.codes/images/runsnake-fh.png"
+                                                    class="image"><img
+                                                    width="44%"
+                                                    src="./images/temps.png"
+                                                    alt="Temperatures"></a>
+                                                </span>
+                                        </section>
+                                </section>
+				<section>
+					<section>
+                                        <h2>Acknowledgements</h2>
+                                                <p>
+                                                <ul>
+                                                <li>Xin Wang,</li>
+                                                <li>Per Peterson,</li>
+                                                <li>Ehud Greenspan,</li>
+                                                <li>and Massimiliano Fratoni</li>
+                                                </ul>
+                                                <br/>
+                                                <span class="fragment">
+                                                <a href="http://bids.berkeley.edu"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="http://bids.berkeley.edu/sites/all/themes/bids/logo.png"
+                                                  alt="BIDS Logo"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a href="http://nssc.berkeley.edu"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="http://www.nuc.berkeley.edu/~bethany/wp-content/uploads/NSSC_newLogo_small-300x190.png"
+                                                  alt=""></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a href="http://fhr.nuc.berkeley.edu"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="http://fhr.nuc.berkeley.edu/wp-content/uploads/2014/10/FHR-logo-300x175.jpg"
+                                                  alt="FHR Logo"></a>
+                                                </span>
+                                        </section>
+                                </section>
+				<section>
+                                        <section>
+                                        <h2>Get The Code!</h2>
+                                        <ul>
+                                          <li>
+                                          <a href="http://pyrk.github.io/">
+                                                  pyrk.github.io
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://github.com/pyrk/pyrk">
+                                                  github.com/pyrk/pyrk
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://katyhuff.github.io/pyrk-scipy-2015">
+                                                  katyhuff.github.io/pyrk-scipy-2015
+                                          </a></li>
+                                        </ul>
+                                        <p>
+                                                <a
+                                                  href="http://pyrk.github.io"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="http://pyrk.github.io/_images/logo.png"
+                                                  alt="book"></a>
+                                          </p>
+                                        </section>
+                                </section>
+				<section>
+					<h1>THE END</h1>
+                                        <h3><a
+                                            href="https://katyhuff.github.io">Katy Huff</a> </h3>
+                                        <a href="https://katyhuff.github.io/pyrk-scipy-2015">katyhuff.github.io/pyrk-scipy-2015</a>
+
+<br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img
+  alt="Creative Commons License" style="border-width:0"
+  src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br /><span
+  xmlns:dct="http://purl.org/dc/terms/" property="dct:title">PyRK</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://katyhuff.github.io" property="cc:attributionName" rel="cc:attributionURL">Kathryn Huff</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.<br />Based on a work at <a xmlns:dct="http://purl.org/dc/terms/" href="http://katyhuff.github.io/bids-faire-2015" rel="dct:source">http://katyhuff.github.io/bids-faire-2015</a>.
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				// parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } },
+                                        { src: 'plugin/math/math.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
