@@ -4,14 +4,12 @@
 	<head>
 		<meta charset="utf-8">
 
-                <title>PyRK: Python for Reactor Kinetics</title>
+                <title>Sustainable Energy via Sustainable Software</title>
 
                 <meta name="description" content="
-                Talk for SciPy 2015,
-                PyRK, Python for Reactor Kinetics
-
+                Job Talk, Fall 2015
                 ">
-		<meta name="author" content="Kathryn (Katy) Huff">
+		<meta name="author" content="Dr. Kathryn Huff">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -47,54 +45,311 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
                                 <section>
-                                <h1>PyRK</h1>
-                                <h3>Python For Reactor Kinetics</h3>
+                                <h2>Sustainable Energy via Sustainable Software</h2>
+                                <h3>Modeling and Simulation in Nuclear Engineering</h3>
                                         <br/>
                                         <h3>Kathryn Huff</h3>
-                                        <h3>SciPy Conference, July 8, 2015</h3>
+                                        <h3>Euphoric State University</h3>
+                                        <h3>September 15, 2015</h3>
                                 </section>
 
                                 <section>
                                         <section>
                                                 <span class="fragment">
                                                 <a
+                                                  href="http://uchicago.edu"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="https://communications.uchicago.edu/sites/all/files/identity/logo/jpg/UC-Shield-fall-2012.jpg"
+                                                  alt="Physics, University of Chicago"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://engr.wisc.edu/ep.html"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="https://umark.wisc.edu/brand/templates-and-downloads/downloads/web/uwcrest_web_sm_shado.png"
+                                                  alt="Nuclear Engineering and Engineering Physics, University of Wisconsin - Madison"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://nuc.berkeley.edu"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://www.berkeley.edu/brand/img/seals/ucbseal_139_540.png"
+                                                  alt="Nuclear Engineering, University of California, Berkeley"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                                <span class="fragment">
+                                                <a href="http://bids.berkeley.edu"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://bids.berkeley.edu/sites/all/themes/bids/logo.png"
+                                                  alt="BIDS Logo"></a>
+                                                </span>
+                                                <br/>
+                                                <span class="fragment">
+                                                <a
                                                   href="http://software-carpentry.org"
                                                   class="image"><img
-                                                  width="30%"
+                                                  height="200"
                                                   src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/software-carpentry-450x254.png?itok=0XnUCwrr"
                                                   alt="Software Carpentry"></a>
+                                                </span>
+                                                <span class="fragment">
                                                 <a
                                                   href="http://thehackerwithin.github.io"
                                                   class="image"><img
-                                                  width="30%"
+                                                  height="200"
                                                   src="http://thehackerwithin.github.io/images/thw_icon.png"
                                                   alt="THW"></a>
+                                                </span>
+                                                <span class="fragment">
                                                 <a
                                                   href="http://physics.codes"
                                                   class="image"><img
-                                                  width="20%"
-                                                  src="http://physics.codes/images/ecip_er.jpg"
+                                                  height="200"
+                                                  src="http://physics.codes/images/ecip.jpg"
                                                   alt="book"></a>
                                                 </span>
+                                        </section>
+                                        <section>
+                                                <br/>
                                                 <span class="fragment">
                                                 <a
                                                   href="http://fuelcycle.org"
                                                   class="image"><img
-                                                  width="30%"
+                                                  width="50%"
                                                   src="http://fuelcycle.org/_images/logo2_bike.gif"
                                                   alt="cyclus"></a>
-                                                <a href="http://pyne.io"
-                                                  class="image"><img
-                                                  width="30%"
-                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/pyne-450x254.png?itok=rdkh0T8e"
-                                                  alt="pyne"></a>
-                                                <span class="fragment">
-                                                <a href="http://pyrk.github.io"
-                                                  class="image"><img
-                                                  width="30%"
-                                                  src="http://pyrk.github.io/_images/logo.png"
-                                                  alt="pyrk"></a>
                                                 </span>
+                                                <span class="fragment">
+                                                <a href="http://fhr.nuc.berkeley.edu"
+                                                  class="image"><img
+                                                  width=45%"
+                                                  src="http://fhr.nuc.berkeley.edu/wp-content/uploads/2014/10/FHR-logo-300x175.jpg"
+                                                  alt="FHR Logo"></a>
+                                                </span>
+                                        </section>
+                                </section>
+                                <section>
+                                        <section>
+                                        <a href="http://fuelcycle.org" class="image"> <img src="http://fuelcycle.org/_images/logo2_bike.gif" alt="image generated by Anthony Scopatz, Paul P.H.  Wilson, and Katy Huff"> </a>
+                                        <h2>A Nuclear Fuel Cycle Simulation Framework</h2>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>The Nuclear Fuel Cycle</h2>
+                                                <p>Hundreds of discrete facilities mine,
+                                                mill, convert, fabricate,
+                                                transmute, recycle, and store
+                                                nuclear material.
+                                                </p>
+                                                <a href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/simulations.png" class="image"><img 
+                                                        width="90%"
+                                                        src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/simulations.png" alt="from Paul Lisowski"></a>
+                                        </section>
+                                        <section>
+                                                <h2>Fuel Cycle Metrics</h2>
+                                                <ul>
+                                                <li>Mass Flow</li>
+                                                  <ul>
+                                                  <li>inventories, decay heat, radiotoxicity,</li>
+                                                  <li>proliferation resistance and physical protection (PRPP) indices.</li>
+                                                  </ul>
+                                                <li>Cost</li>
+                                                  <ul>
+                                                  <li>levelized cost of electricity,</li>
+                                                  <li>facility life cycle costs.</li>
+                                                  </ul>
+                                                <li>Economics</li>
+                                                  <ul>
+                                                  <li>power production, facility deployments,</li>
+                                                  <li>dynamic pricing and feedback.</li>
+                                                  </ul>
+                                                <li>Disruptions</li>
+                                                  <ul>
+                                                  <li>reliability, safety,</li>
+                                                  <li>system robustness.</li>
+                                                  </ul>
+                                                </ul>
+                                        </section>
+                                        <section>
+                                        <h3>Current Simulators</h3>
+                                        <ul>
+                                         <li>CAFCA (MIT)</li>
+                                         <li>COSI (CEA)</li>
+                                         <li>DANESS (ANL)</li>
+                                         <li>DESAE (Rosatom)</li>
+                                         <li>Evolcode (CIEMAT)</li>
+                                         <li>FAMILY (IAEA)</li>
+                                         <li>GENIUSv1 (INL)</li>
+                                         <li>GENIUS v2 (UW)</li>
+                                         <li>NFCSim (LANL)</li>
+                                         <li>NFCSS (IAEA)</li>
+                                         <li>NUWASTE (NWTRB)</li>
+                                         <li>ORION (NNL)</li>
+                                         <li>MARKAL (BNL)</li>
+                                         <li>VISION (INL)</li>
+                                        </ul>
+                                        </section>
+                                        <section>
+                                        In general, simulators differ in the following respects:
+                                        <br/>
+                                        <ul>
+                                        <li><b>access:</b> proprietary, limited, or open</li>
+                                        <li><b>material flows:</b> continuous or discrete</li>
+                                        <li><b>facility deployment:</b> individual or fleet-based</li>
+                                        <li><b>regional modeling</b></li>
+                                        </ul>
+Recognized areas of need in previous simulators include :
+- Usability directed toward a wide range of user sophistication.
+- Performance solving simple problems in interactive time scales
+- Fidelity accommodating a range of levels of detail commensurate with
+user sophistication
+Valuable software development practices have been identified [?][?]:
+- Modularity allows the core infrastructure to be independent of proprietary
+and/or sensitive data and/or models.
+- Extensibility with a focus on both robustness and flexibility allows for
+myriad potential developer extensions.
+- Openness supports collaboration, verification, validation, and code
+sustainability.
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <p>An agent-based simulation 
+                                                is made up of actors and 
+                                                communications between those 
+                                                actors. 
+                                                </p>
+                                                <a 
+                                                        href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/simulations.png" 
+                                                        class="image"><img 
+                                                        width="90%" src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/simulations.png" alt="from Paul Lisowski"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <p>A facility might create material.</p>
+                                                <a href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/sourcefacility.png" class="image"><img 
+                                                        width="100%"
+                                                        src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/sourcefacility.png" alt="source"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <p>It might request material.</p>
+                                                <a 
+                                                        href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/sinkfacility.png" 
+                                                        class="image"><img 
+                                                        width="100%"
+                                                        src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/sinkfacility.png" alt="sink"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <p>It might do both.</p>
+                                                <a 
+                                                        href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/facility.png" 
+                                                        class="image"><img 
+                                                        width="100%"
+                                                        src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/facility.png" alt="fac"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <p>Even simple fuel cycles have many independent agents.</p>
+                                                <a href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/materials.png" class="image"><img
+                                                        width="90%"
+                                                        src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/materials.png" alt="material flow"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <a href="http://fuelcycle.org/_images/cep-0018-3.png" class="image"><img
+                                                        height="500"
+                                                        src="http://fuelcycle.org/_images/cep-0018-3.png" alt="abm"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <a href="http://fuelcycle.org/_images/cep-0018-4.png" class="image"><img
+                                                        height="500"
+                                                        src="http://fuelcycle.org/_images/cep-0018-4.png" alt="abm"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                                <h2>Agent Based Systems Analysis</h2>
+                                                <a href="http://fuelcycle.org/_images/cep-0018-5-png" class="image"><img
+                                                        height="500"
+                                                        src="http://fuelcycle.org/_images/cep-0018-5.png" alt="abm"></a>
+                                        </section>
+                                        <section>
+                                                <h2>Extensibility</h2>
+                                                <a 
+                                                        href="https://raw.githubusercontent.com/katyhuff/job-talk/gh-pages/images/framework.png" 
+                                                        class="image"><img 
+                                                        width="90%"
+                                                        src="./images/framework.png" alt="framework"></a>
+                                                
+                                        </section>
+                                        <section>
+                                                <h2>Openness</h2>
+                                                <a 
+                                                        href="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/materials.png" 
+                                                        class="image"><img 
+                                                        width="50%"src="./images/openness.png" 
+                                                        alt="private, export controlled, etc."></a>
+                                                
+                                        </section>
+                                        <section>
+                                                <h2>Canonical Visualizations</h2>
+                                                <br/>
+                                                <p class="fragment" left="-400">
+                                                <iframe
+                                                  src="http://fuelcycle.org/cyc3d/viz-exp.html?chart&dynamic&waste&doe"
+                                                  width="1500" height="500"
+                                                  style="-ms-zoom: 1.2; -moz-transform: scale(1.2); -moz-transform-origin: 0 0; -o-transform: scale(1.2); -o-transform-origin: 0 0; -webkit-transform: scale(1.2); -webkit-transform-origin: 0 0;"></iframe>
+                                              </p>
+                                        </section>
+                               </section>
+                                <section>
+                                        <section>
+                                        <a href="http://katyhuff.github.com/pbfhr" class="image"> <img src="http://fhr.nuc.berkeley.edu/wp-content/uploads/2013/08/WebSideRight.png" alt="image generated by Tommy Cisneros and the UCBerkeley FHR group"> </a>
+                                        </section>
+
+                                        <section>
+                                        <a href="http://katyhuff.github.com/pbfhr" class="image"> <img src="http://fhr.nuc.berkeley.edu/wp-content/uploads/2014/10/FHR_Mk1_PB-FHR-Mk1-Reactor-Cross-Section.png" alt="image generated by the UCBerkeley FHR group"> </a>
+                                        </section>
+
+                                        <section>
+                                                <h2>Coupled MultiPhysics Analysis</h2>
+                                                <br/>
+                                                <p>Severe accident <b>neutronics</b> and
+                                                <b/>thermal hydraulics</b> can 
+                                                be simulated beautifully for simple geometries and well
+                                                studied materials. (below, INL BISON work.)
+                                                </p>
+                                                <a href="http://www.iaea.org/OurWork/ST/NE/NEFW/Technical-Areas/NFC/documents/fuel-engineering/TM-Chengdu-2013/Presentations/Session_1/1.5_Overview_of_BISON_Multidimensional_Fuel_Performance_code_(R._Williamson).pdf"
+                                                  class="image"><img
+                                                  height="362" width="564"
+                                                  src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/ap1000_moose.png"
+                                                  alt="from INL, Rich Williamson"></a>
+                                        </section>
+                                        <section>
+                                                <h2>PB-FHR Fuel Geometry</h2>
+                                                <a
+                                                  href="https://fhr.nuc.berkeley.edu"
+                                                  class="image"><img
+                                                  src="http://fhr.nuc.berkeley.edu/wp-content/uploads/2014/10/PEBBLE-SCHEMATIC-V2-1024x565.png"
+                                                  alt="FHR Pebbles diagram, UCB
+                                                  FHR project. This image from
+                                                  http://fhr.nuc.berkeley.edu/pb-fhr-technology/fuel-development/"
+                                                  height="65%"></a>
+                                        </section>
+                                        <section>
+                                         <h2>FHR, Accident Transient Analysis</h2>
+                                        <ul>
+                                         <li>Collect experimental data</li>
+                                         <li>Develop 0D coupled neutronics/TH model (PyRK)</li>
+                                         <li>Compare to algebraic, static, and benchmark results</li>
+                                         <li>Develop 3D neutronics/TH model</li>
+                                         <li>Compare 0D and 3D models</li>
+                                         <li>Connect additional coupled physics</li>
+                                        </ul>
                                         </section>
                                 </section>
 				<section>
@@ -114,7 +369,7 @@
                                                   class="image"><img
                                                   src="http://rationalwiki.org/w/images/thumb/0/0e/Fission.svg/800px-Fission.svg.png"
                                                   alt="Fission."></a>
-                                                <p class="fragment">\[\sigma(E,\vec{r},\hat{\Omega},T,t,x,i)\]<p>
+                                                <p class="fragment">\[\sigma(E,\vec{r},\hat{\Omega},T,t,x,i)\]</p>
                                         </section>
                                         <section>
                                                 <a href="http://wwwndc.jaea.go.jp/j40fig/jpeg/u235_f1.jpg"
@@ -127,20 +382,23 @@
                                                   class="image"><img
                                                   src="http://rationalwiki.org/w/images/thumb/1/1f/Chainreaction.svg/715px-Chainreaction.svg.png"
                                                   alt="Chain reaction"></a>
-                                          <p class="fragment">\[k\]<p>
+                                          <p class="fragment">\[k\]</p>
                                         </section>
                                         <section>
                                                 <a href="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ThermalFissionYield.svg/800px-ThermalFissionYield.svg.png"
                                                   class="image"><img
+                                                  height="400"
                                                   src="http://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ThermalFissionYield.svg/800px-ThermalFissionYield.svg.png"
-                                                  alt="Fission yield"height=400></a>
-                                          <p class="fragment">\[i\]<p>
+                                                  alt="Fission yield"></a>
+                                          <p class="fragment">\[i\]</p>
                                         </section>
                                         <section> <a href="http://rationalwiki.org/wiki/File:Fission.svg"
                                                   class="image"><img
                                                   src="./images/delayed_neutron.png"
-                                                  alt="Delayed Neutrons"height=400></a>
-                                          <p class="fragment">\[\beta_i\]<p>
+                                                  height="400"
+                                                  alt="Delayed Neutrons"
+                                                  ></a>
+                                          <p class="fragment">\[\beta_i\]</p>
                                         </section>
                                         <section>
                                         <h2>Reactivity</h2>
@@ -154,7 +412,7 @@
 \]
 </section>
 <section>
-<h2>PRKE</h2>
+<h2>Reactivity</h2>
 \[
    \rho(t) = \rho_0 + \rho_f(t) + \rho_{ext}
 \]
@@ -173,12 +431,40 @@ where
 \]
 </section>
                                         <section>
-                                                 <a href=""
+                                                 <a href="github.com/pyrk/pyrk"
                                                   class="image"><img
+                                                  width="100%"
                                                   src="./images/feedback.png"
-                                                  alt="Feedback"height=400></a>
+                                                  alt="Feedback"></a>
                                         </section>
+                                        <!--- <section>
+                                                <h2>Simulation Methods</h2>
+                                                <ul>
+                                                  <li>Monte Carlo Methods</li>
+                                                  <li>Deterministic Methods</li>
+                                                  <li>Hybrid Methods</li>
+                                                  <li>Other keywords...</li>
+                                                  <ul>
+                                                  <li>lattice codes</li>
+                                                  <li>ray tracing algorithms</li>
+                                                  <li>acceleration schemes</li>
+                                                  <li>adjoint methods</li>
+                                                  <li>...</li>
+                                                </ul>
+                                        </section>
+                                        -->
+                               </section>
+                               <section>
 
+                                        <section>
+                                                <h2>PyRK</h2>
+                                                <ul>
+                                                <li>6-precursor-group,</li>
+                                                <li>11-decay-group Point Reactor Kinetics model</li>
+                                                <li>Lumped Parameter thermal hydraulics model</li>
+                                                <li>Object-oriented, geometry and material agnostic framework</li>
+                                                <ul>
+                                        </section>
 <section>
 <small>
 \[
@@ -242,36 +528,26 @@ where
 \end{align}
                                         \]
 </small>
-                                        </section>
-                                        <section>
-                                                <h2>Simulation Methods</h2>
-                                                <ul>
-                                                  <li>Monte Carlo Methods</li>
-                                                  <li>Deterministic Methods</li>
-                                                  <li>Hybrid Methods</li>
-                                                  <li>Other keywords...</li>
-                                                  <ul>
-                                                  <li>lattice codes</li>
-                                                  <li>ray tracing algorithms</li>
-                                                  <li>acceleration schemes</li>
-                                                  <li>adjoint methods</li>
-                                                  <li>...</li>
-                                                </ul>
-                                                </ul>
-
-                                        </section>
-                               </section>
-                               <section>
-
-                                        <section>
-                                                <h2>PyRK</h2>
-                                                <ul>
-                                                <li>6-precursor-group,</li>
-                                                <li>11-decay-group PRKE model</li>
-                                                <li>Lumped Parameter thermal hydraulics model</li>
-                                                <li>Object-oriented, geometry and material agnostic framework</li>
-                                                <ul>
-                                        </section>
+</section>
+<section>
+  <h2>Lumped Parameter Heat Transfer</h2>
+<small>
+The heat flow out of body $i$ is the sum of surface heat flow by conduction,
+convection, radiation, and other mechanisms to each adjacent body, $j$:
+\[
+\begin{align}
+Q &= Q_i + \sum_j Q_{ij}\\
+  &=Q_i +  \sum_j\frac{T_{i} - T_{j}}{R_{th,ij}}\\
+\dot{Q} &= \mbox{total heat flow out of body i }[J\cdot s^{-1}]\\
+Q_i &= \mbox{other heat transfer, a constant }[J\cdot s^{-1}]\\
+T_i &= \mbox{temperature of body i }[K]\\
+T_j &= \mbox{temperature of body j }[K]\\
+j &= \mbox{adjacent bodies }[-]\\
+R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
+\end{align}
+\]
+</small>
+</section>
 <section>
   <h2>Quality Control</h2>
   <ul>
@@ -330,7 +606,7 @@ robustness using nose.
   <h2>Continuous Integration</h2>
                                                 <a href=""
                                                   class="image"><img
-                                                  src="./images/tests_pyrk.png"
+                                                  src="./images/travis_pyrk.png"
                                                   width="50%"
                                                   alt="Docs"></a>
 <br/>The tests are run every time a change is made to the repository online. The results are public. If a main branch has a failed test, I get
@@ -343,8 +619,7 @@ robustness using nose.
 	<li><b>Neutronics</b> : calculates $dP/dt$, $d\omega_j/dt$, based on $dT_i/dt$ and the external reactivity insertion.  </li>
 	<li><b>THSystem</b> : manages various THComponents, facilitates their communication.  </li>
 	<li><b>THComponent</b> : Conducts lumped parameter calculation. Other thermal models can inherit from it and replace it in the simulation.</li>
-	<li><b>Material</b> : A class for defining the intensive properties of a material ($c_p$, $\rho$, $k_{th}$). Subclasses include <b>Flibe</b>,
-Graphite</b>, <b>SS316</b>, and others.</li>
+	<li><b>Material</b> : A class for defining the intensive properties of a material ($c_p$, $\rho$, $k_{th}$). Subclasses include <b>Flibe</b>, <b>Graphite</b>, <b>SS316</b>, and others.</li>
 </ul>
 </section>
 
@@ -358,29 +633,6 @@ Graphite</b>, <b>SS316</b>, and others.</li>
 <br/>The reactivity insertion that drives the simulator can be selected
     and customized from three models.
 </section>
-
-
-<section>
-  <h2>Lumped Parameter Heat Transfer</h2>
-<small>
-The heat flow out of body $i$ is the sum of surface heat flow by conduction,
-convection, radiaion, and other mechanisms to each adjacent body, $j$:
-\[
-\begin{align}
-Q &= Q_i + \sum_j Q_{ij}\\
-  &=Q_i +  \sum_j\frac{T_{i} - T_{j}}{R_{th,ij}}\\
-\dot{Q} &= \mbox{total heat flow out of body i }[J\cdot s^{-1}]\\
-Q_i &= \mbox{other heat transfer, a constant }[J\cdot s^{-1}]\\
-T_i &= \mbox{temperature of body i }[K]\\
-T_j &= \mbox{temperature of body j }[K]\\
-j &= \mbox{adjacent bodies }[-]\\
-R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
-\end{align}
-\]
-</small>
-</section>
-                                </section>
-                                <section>
                                         <section>
                                          <h3>Minimal Example</h3>
                                          <br/><b>Sodium Cooled Fast Reactor</b>
@@ -495,7 +747,96 @@ rho_ext = pulse(timer=ti,
                                                 </span>
                                         </section>
                                 </section>
+                                <section>
+                                        <section>
+                                        <h2>Insights at Disparate Scales</h2>
+                                                <span class="fragment">
+                                                <a href="http://katyhuff.github.io/papers/research.pdf"
+                                                  class="image"><img
+                                                  width="100%"
+                                                  src="./images/synergy.png"
+                                                  alt="synergistic insights"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                        <h2>Insights at Disparate Scales</h2>
+                                                <span class="fragment">
+                                                <a href="http://mooseframework.org/static/media/wiki/images/229/9629aa4947c9233de95d8a214180bdeb/moose.png"
+                                                  class="image"><img
+                                                  src="http://mooseframework.org/static/media/wiki/images/229/9629aa4947c9233de95d8a214180bdeb/moose.png"
+                                                  height="600"
+                                                  alt="synergistic insights"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                        <h2>Insights at Disparate Scales</h2>
+                                                <span class="fragment">
+                                                <a href="http://katyhuff.github.io/papers/research.pdf"
+                                                  class="image"><img
+                                                  height="100%"
+                                                  src="./images/fuelcycles.png"
+                                                  alt="synergistic insights"></a>
+                                                </span>
+                                        </section>
+				</section>
 				<section>
+                                        <section>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://software-carpentry.org"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://bids.berkeley.edu/sites/default/files/styles/450x254/public/projects/software-carpentry-450x254.png?itok=0XnUCwrr"
+                                                  alt="Software Carpentry"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://thehackerwithin.github.io"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://thehackerwithin.github.io/images/thw_icon.png"
+                                                  alt="THW"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="http://physics.codes"
+                                                  class="image"><img
+                                                  height="200"
+                                                  src="http://physics.codes/images/ecip.jpg"
+                                                  alt="book"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                        <h2>Links</h2>
+                                        <ul>
+                                        <ul>
+                                          <li>fuelcycle.org</li>
+                                          <li>katyhuff.github.io</li>
+                                          <li>fhr.nuc.berkeley.edu</li>
+                                          <li>
+                                          <a href="http://pyrk.github.io/">
+                                                  pyrk.github.io
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://github.com/pyrk/pyrk">
+                                                  github.com/pyrk/pyrk
+                                          </a></li>
+
+                                          <li>
+                                          <a href="http://katyhuff.github.io/pyrk-scipy-2015">
+                                                  katyhuff.github.io/pyrk-scipy-2015
+                                          </a></li>
+                                        </ul>
+                                        <p>
+                                                <a
+                                                  href="http://pyrk.github.io"
+                                                  class="image"><img
+                                                  width="25%"
+                                                  src="http://pyrk.github.io/_images/logo.png"
+                                                  alt="pyrk"></a>
+                                          </p>
+                                        </section>
 					<section>
                                         <h2>Acknowledgements</h2>
                                                 <p>
@@ -530,35 +871,6 @@ rho_ext = pulse(timer=ti,
                                         </section>
                                 </section>
 				<section>
-                                        <section>
-                                        <h2>Get The Code!</h2>
-                                        <ul>
-                                          <li>
-                                          <a href="http://pyrk.github.io/">
-                                                  pyrk.github.io
-                                          </a></li>
-
-                                          <li>
-                                          <a href="http://github.com/pyrk/pyrk">
-                                                  github.com/pyrk/pyrk
-                                          </a></li>
-
-                                          <li>
-                                          <a href="http://katyhuff.github.io/pyrk-scipy-2015">
-                                                  katyhuff.github.io/pyrk-scipy-2015
-                                          </a></li>
-                                        </ul>
-                                        <p>
-                                                <a
-                                                  href="http://pyrk.github.io"
-                                                  class="image"><img
-                                                  width="25%"
-                                                  src="http://pyrk.github.io/_images/logo.png"
-                                                  alt="book"></a>
-                                          </p>
-                                        </section>
-                                </section>
-				<section>
 					<h1>THE END</h1>
                                         <h3><a
                                             href="https://katyhuff.github.io">Katy Huff</a> </h3>
@@ -585,6 +897,7 @@ rho_ext = pulse(timer=ti,
 			Reveal.initialize({
 				controls: true,
 				progress: true,
+                                slideNumber: true,
 				history: true,
 				center: true,
 
