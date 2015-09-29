@@ -556,7 +556,7 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                 <pre><code class="python">
 
 fuel = th.THComponent(name="fuel",
-                      mat=TRISO,
+                      mat=TRISO(),
                       vol=vol_fuel,
                       T0=t_fuel,
                       alpha_temp=alpha_fuel,
@@ -569,7 +569,7 @@ fuel = th.THComponent(name="fuel",
                       )
 
 mod = th.THComponent(name="mod",
-                     mat=Graphite,
+                     mat=Graphite(),
                      vol=vol_mod,
                      T0=t_mod,
                      alpha_temp=alpha_mod,
@@ -579,14 +579,14 @@ mod = th.THComponent(name="mod",
                      ro=r_mod)
 
 cool = th.THComponent(name="cool",
-                      mat=Flibe,
+                      mat=Flibe(),
                       vol=vol_cool,
                       T0=t_cool,
                       alpha_temp=alpha_cool,
                       timer=ti)
 
 shell = th.THComponent(name="shell",
-                       mat=Graphite,
+                       mat=Graphite(),
                        vol=vol_shell,
                        T0=t_shell,
                        alpha_temp=alpha_shell,
