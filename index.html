@@ -55,6 +55,23 @@
                                         <section>
                                                 <span class="fragment">
                                                 <a
+                                                  href="http://www.254texascourthouses.net/uploads/8/4/4/6/8446371/6571801.png?353"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="http://www.254texascourthouses.net/uploads/8/4/4/6/8446371/6571801.png?353"
+                                                  alt="Bellville, TX"></a>
+                                                </span>
+                                                <span class="fragment">
+                                                <a
+                                                  href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G5ICpLPFAwlQ6JleMfkPbnYBSaib2rBFdJ4pR_F03LJeXaufOw"
+                                                  class="image"><img
+                                                  height="300"
+                                                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7G5ICpLPFAwlQ6JleMfkPbnYBSaib2rBFdJ4pR_F03LJeXaufOw"
+                                                  alt="TAMS"></a>
+                                                </span>
+                                                <br/>
+                                                <span class="fragment">
+                                                <a
                                                   href="http://uchicago.edu"
                                                   class="image"><img
                                                   height="300"
@@ -258,25 +275,6 @@
 \end{align}
 \]
 </section>
-<section>
-<h2>Reactivity</h2>
-\[
-   \rho(t) = \rho_0 + \rho_f(t) + \rho_{ext}
-\]
-<br/>
-where
-<br/>
-\[
-\begin{align}
-   \rho(t) &= \mbox{total reactivity}\\
-   \rho_f(t) &= \mbox{reactivity from feedback}\\
-   \rho_f(t) &= \sum_i \alpha_i\delta T_i\\
-   T_i &= \mbox{temperature of component i}\\
-   \alpha_i &= \mbox{temperature reactivity coefficient of i}\\
-   \rho_{ext}(t) &= \mbox{external reactivity insertion}.
-\end{align}
-\]
-</section>
                                         <section>
                                                  <a href="github.com/pyrk/pyrk"
                                                   class="image"><img
@@ -307,6 +305,25 @@ where
                                                   <li>...</li>
                                                 </ul>
                                         </section>
+<section>
+<h2>Reactivity</h2>
+\[
+   \rho(t) = \rho_0 + \rho_f(t) + \rho_{ext}
+\]
+<br/>
+where
+<br/>
+\[
+\begin{align}
+   \rho(t) &= \mbox{total reactivity}\\
+   \rho_f(t) &= \mbox{reactivity from feedback}\\
+   \rho_f(t) &= \sum_i \alpha_i\delta T_i\\
+   T_i &= \mbox{temperature of component i}\\
+   \alpha_i &= \mbox{temperature reactivity coefficient of i}\\
+   \rho_{ext}(t) &= \mbox{external reactivity insertion}.
+\end{align}
+\]
+</section>
                                         -->
                                </section>
                                <section>
@@ -404,7 +421,7 @@ R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
 </section>
 <section>
   <h2>Quality Control</h2>
-  <ul>
+<!--  <ul>
     	<li> Unit Checking: Pint (github.com/pint)</li>
     	<li> Version Control: Git & GitHub (github.com/pyrk/pyrk)</li>
     	<li> Automated Documentation: Sphinx (pyrk.github.io)</li>
@@ -413,6 +430,7 @@ R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
     	<li> Plotting: Matplotlib</li>
     	<li> ODE solvers: SciPy</li>
   </ul>
+  -->
 </section>
 
 <section>
@@ -420,7 +438,7 @@ R_{th} &= \mbox{thermal resistence of the component }[K \cdot s \cdot J^{-1}].
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/pint_pyrk.png"
-                                                  width="50%"
+                                                  height="400"
                                                   alt="Pint"></a>
 <br/>In PyRK, the Pint package (pint.readthedocs.org/en/0.6/) is used keeping track
 of units, converting between them, and throwing errors when unit
@@ -431,7 +449,7 @@ conversions are not sane.
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/github_pyrk.png"
-                                                  width="50%"
+                                                  height="400"
                                                   alt="Docs"></a>
 <br/>Keeping track of versions of the code makes it possible to experiment without
 fear and placing the code online encourages use and collaboration.
@@ -441,7 +459,7 @@ fear and placing the code online encourages use and collaboration.
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/doc_pyrk.png"
-                                                  width="50%"
+                                                  height="400"
                                                   alt="Docs"></a>
 <br/>Automated documentation creates a browsable website explaining the most recent version of the code.
 </section>
@@ -450,7 +468,7 @@ fear and placing the code online encourages use and collaboration.
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/tests_pyrk.png"
-                                                  width="50%"
+                                                  height="400"
                                                   alt="Docs"></a>
 <br/>The classes and functions that make up the code are tested individually for
 robustness using nose.
@@ -461,13 +479,14 @@ robustness using nose.
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/travis_pyrk.png"
-                                                  width="50%"
+                                                  height="400"
                                                   alt="Docs"></a>
 <br/>The tests are run every time a change is made to the repository online. The results are public. If a main branch has a failed test, I get
     an email.
 </section>
+<!-- 
 <section>
-  <h2>Neutronics : Reactivity Insertion Model</h2>
+<h2>Neutronics : Reactivity Insertion Model</h2>
                                                 <a href=""
                                                   class="image"><img
                                                   src="./images/ri.png"
@@ -476,6 +495,7 @@ robustness using nose.
 <br/>The reactivity insertion that drives the simulator can be selected
     and customized from three models.
 </section>
+-->
                                         <section>
                                          <h3>PB-FHR Reactivity Insertion</h3>
                                          <br/><b>Pebble-Bed, Fluoride Salt Cooled, High-Temperature Reactor</b>
@@ -493,7 +513,7 @@ robustness using nose.
                                                   <a
                                                     href="https://raw.githubusercontent.com/katyhuff/2015-09-29-tamu/gh-pages/images/reactivity.png"
                                                     class="image"><img
-                                                    width="60%"
+                                                    height="500"
                                                     src="./images/reactivity_insertion.png"
                                                     alt="reactivity insertion"></a>
                                                 </span>
@@ -536,7 +556,7 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                 <pre><code class="python">
 
 fuel = th.THComponent(name="fuel",
-                      mat=Fuel,
+                      mat=TRISO,
                       vol=vol_fuel,
                       T0=t_fuel,
                       alpha_temp=alpha_fuel,
@@ -549,7 +569,7 @@ fuel = th.THComponent(name="fuel",
                       )
 
 mod = th.THComponent(name="mod",
-                     mat=Moderator,
+                     mat=Graphite,
                      vol=vol_mod,
                      T0=t_mod,
                      alpha_temp=alpha_mod,
@@ -559,14 +579,14 @@ mod = th.THComponent(name="mod",
                      ro=r_mod)
 
 cool = th.THComponent(name="cool",
-                      mat=cool,
+                      mat=Flibe,
                       vol=vol_cool,
                       T0=t_cool,
                       alpha_temp=alpha_cool,
                       timer=ti)
 
 shell = th.THComponent(name="shell",
-                       mat=Shell,
+                       mat=Graphite,
                        vol=vol_shell,
                        T0=t_shell,
                        alpha_temp=alpha_shell,
@@ -825,6 +845,54 @@ s.t & \sum_{i\in I_s}\sum_{j\in J} a_{i,j}^k x_{i,j} \le b_s^k & \forall k\in K_
 \]
 </small>
                                         </section>
+                                        <section data-transition="none">
+                                        <h2>Dynamic Resource Exchange</h2>
+                                                <a href="http://fuelcycle.org" class="image"><img
+                                                        width="500"
+                                                        src="./images/mod-open.png" 
+                                                        alt="modified open"></a>
+                                        </section>
+                                        <section data-transition="none">
+                                        <h2>Dynamic Resource Exchange</h2>
+                                                <a href="http://fuelcycle.org" class="image"><img
+                                                        width="500"
+                                                        height="600"
+                                                        src="./images/closed.png" 
+                                                        alt="closed"></a>
+                                        </section>
+                                        <section>
+                                        <h2>Dynamic Resource Exchange</h2>
+                                                <span class="fragment">
+                                                <pre><code class="xml">
+   <fuel>
+     <incommodity>mox</incommodity>
+-    <outcommodity>waste</outcommodity>
++    <outcommodity>spent_fuel</outcommodity>
+     <inrecipe>mox_fresh_fuel</inrecipe>
+     <outrecipe>mox_spent_fuel</outrecipe>
+   </fuel> 
+                                                </code></pre>
+                                                </span>
+                                        </section>
+                                        <section>
+                                        <h2>Dynamic Resource Exchange</h2>
+                                                <a href="http://fuelcycle.org" class="image"><img
+                                                        height="500"
+                                                        src="./images/pu-buildup.png" 
+                                                        alt="Plutonium buildup"></a>
+                                        </section>
+                                        <section>
+                                        <h2>Transition Analysis</h2>
+                                <ul>
+                                <li>LWR to SFR Transition</li>
+                                <li>Starts in 2015, ends when transition complete</li> 
+                                <li>100 GWe initial LWR capacity</li>
+                                <li>1% annual nuclear energy demand growth</li>
+                                <li>Legacy LWRs have either 60-year lifetimes or 80-year lifetimes.</li>
+                                <li>Spent LWR fuel reprocessed to fabricate FR fuel</li>
+                                <li>Spent FR fuel reprocessed to fabricate FR fuel</li>
+                                </ul>
+                                        </section>
                                         <section>
                                         <h2>Transition Analysis</h2>
                                                 <a href="http://fuelcycle.org" class="image"><img
@@ -834,15 +902,15 @@ s.t & \sum_{i\in I_s}\sum_{j\in J} a_{i,j}^k x_{i,j} \le b_s^k & \forall k\in K_
                                                 <p>Power generated by reactor type.</p>
                                         </section>
                                         <section>
-                                        <h2>Feasibility vs. Optimization</h2>
+                                        <h2>Transition Analysis</h2>
                                                 <a href="http://fuelcycle.org" class="image"><img
-                                                        height="500"
+                                                        width="900"
                                                         src="./images/capacity_deployed_by_type.png" 
                                                         alt="polynomial hardness"></a>
                                                 <p>Capacity deployed each year, by reactor type.</p>
                                         </section>
                                         <section>
-<a href="http://fuelcycle.org/cyc3d/viz-exp.html?chart&dynamic&waste&doe" data-preview-link>Canonical Comparisons</a>
+<a href="http://fuelcycle.org/cyc3d/viz-exp.html?chart&dynamic&waste&doe" data-preview-link>Canonical Waste Management Comparisons</a>
                                         </section>
                                </section>
                                 <section>
@@ -902,6 +970,7 @@ s.t & \sum_{i\in I_s}\sum_{j\in J} a_{i,j}^k x_{i,j} \le b_s^k & \forall k\in K_
                                         <h2>Acknowledgements</h2>
                                                 <p>
                                                 <ul>
+                                                <li>Denia Djokic</li>
                                                 <li>Matthew Gidden</li>
                                                 <li>Massimiliano Fratoni</li>
                                                 <li>Ehud Greenspan</li>
