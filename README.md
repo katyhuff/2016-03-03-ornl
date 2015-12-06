@@ -1,6 +1,6 @@
 # Modeling and Simulation Approaches to Challenges in Nuclear Engineering
 
-Seminar-style job talks, Fall, 2015.
+Invited seminar, University of Illinois. December 08, 2015.
 
 ## Kathryn Huff
 
