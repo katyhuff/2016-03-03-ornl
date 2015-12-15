@@ -198,10 +198,10 @@
                                          <h2>FHR, Accident Transient Analysis</h2>
                                         <ul>
                                          <li>Collect experimental data</li>
-                                         <li>Conduct algebraic, static, and benchmark results</li>
+                                         <li>Conduct algebraic, static, and benchmark simulations</li>
                                          <li class="fragment highlight-blue">Develop 0D coupled neutronics/TH model (PyRK)</li>
                                          <li>Develop 3D neutronics/TH model</li>
-                                         <li>Compare 0D and 3D models</li>
+                                         <li>Compare 0D and 3D simulations</li>
                                          <li>Couple additional physics (e.g.  fuel performance)</li>
                                         </ul>
                                         </section>
@@ -592,20 +592,36 @@ cool.add_advection('cool', m_flow/n_pebbles, t_inlet, cp=cool.cp)
                                         <section>
                                          <h3>Pebble Temperature</h3>
                                                   <a
-                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/reactivity.png"
+                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/p_trans.png"
                                                     class="image"><img
-                                                    width="45%"
-                                                    src="./images/reactivity.png"
-                                                    alt="reactivity"></a>
+                                                    width="49%"
+                                                    src="./images/p_trans.png"
+                                                    alt="power"></a>
                                                 <span class="fragment">
                                                   <a
-                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/temps.png"
+                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/f_temp.png"
                                                     class="image"><img
-                                                    width="44%"
-                                                    src="./images/temps.png"
-                                                    alt="Temperatures"></a>
+                                                    width="49%"
+                                                    src="./images/f_temp.png"
+                                                    alt="Fuel Temperatures"></a>
                                                 </span>
-                                        <p class="fragment">Average fuel pebble peak temperature \[<1100^\circ C\] </p>
+                                        </section>
+                                        <section>
+                                         <h3>Coolant Temperature</h3>
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/f_temp.png"
+                                                    class="image"><img
+                                                    width="49%"
+                                                    src="./images/f_temp.png"
+                                                    alt="Fuel Temperatures"></a>
+                                                <span class="fragment">
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/2015-12-15-msu/gh-pages/images/c_temp.png"
+                                                    class="image"><img
+                                                    width="49%"
+                                                    src="./images/c_temp.png"
+                                                    alt="Coolant Temperatures"></a>
+                                                </span>
                                         </section>
                                 </section>
                                 <section>
@@ -777,21 +793,21 @@ cool.add_advection('cool', m_flow/n_pebbles, t_inlet, cp=cool.cp)
                                                         src="https://raw.githubusercontent.com/katyhuff/thunder/gh-pages/images/materials.png" alt="material flow"></a>
                                         </section>
                                         <section data-transition="none">
-                                                <h2>Agent Based Systems Analysis</h2>
+                                                <h2>Dynamic Resource Exchange</h2>
                                                 <a href="http://fuelcycle.org/_images/cep-0018-3.png" class="image"><img
                                                         height="500"
                                                         src="http://fuelcycle.org/_images/cep-0018-3.png" alt="abm"></a>
                                                 \[N_i \subset N\]
                                         </section>
                                         <section data-transition="none">
-                                                <h2>Agent Based Systems Analysis</h2>
+                                                <h2>Dynamic Resource Exchange</h2>
                                                 <a href="http://fuelcycle.org/_images/cep-0018-4.png" class="image"><img
                                                         height="500"
                                                         src="http://fuelcycle.org/_images/cep-0018-4.png" alt="abm"></a>
                                                 \[N_j \subset N\]
                                         </section>
                                         <section data-transition="none">
-                                                <h2>Agent Based Systems Analysis</h2>
+                                                <h2>Dynamic Resource Exchange</h2>
                                                 <a href="http://fuelcycle.org/_images/cep-0018-5-png" class="image"><img
                                                         height="500"
                                                         src="http://fuelcycle.org/_images/cep-0018-5.png" alt="abm"></a>
