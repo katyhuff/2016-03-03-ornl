@@ -240,13 +240,6 @@
 						<li>Fuel Element: 6cm Spherical elements, TRISO matrix</li>
 						</ul>
                                         </section>
-                                        <section>
-                                                <h2><+Title+></h2>
-                                                <a href="<+hyperlink+>"
-                                                  class="image"><img
-                                                  src="<+img+>"
-                                                  alt="<+note+>"></a>
-                                        </section>
                                 </section>
 				<section>
                                         <section>
@@ -272,10 +265,14 @@
                                                 </ul>
                                         </section>
                                         <section>
-                                                <b>Lance Maul:</b> Comparing MCNP, SERPENT, KENO results. 
-                                                <b>Huff and Novak:</b> Comparing Steady State MOOSE results
+                                                <b>Dan Chen, Max Fratoni:</b>Developing Benchmarks<br/>
+                                                <b>Lance Maul:</b> Comparing MCNP, SERPENT, KENO results.<br/>
+                                                <b>Manuele Aufiero:</b> SERPENT analysis (with Open Foam TH).<br/>
+                                                <b>Xin Wang:</b> COMSOL model development.<br/>
+                                                <b>Huff and Novak:</b> MOOSE application development.<br/>
+                                                <b>Huff and Novak:</b> Benchmark geometry generation.<br/> 
                                         </section>
-                                        <section>
+                                        <section data-transition='none'>
                                                 <h2>Phase 1</h2>
                                                 <a href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/cube.png"
                                                   class="image"><img
@@ -284,7 +281,7 @@
                                                   src="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/cube.png"
                                                   alt="cube benchmark, April Novak"></a>
                                         </section>
-                                        <section>
+                                        <section data-transition='none'>
                                                 <h2>Phase 2</h2>
                                                 <a 
                                                   href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/tmsr-cyl-full.png"
@@ -313,41 +310,22 @@
                                         </section>
                                         <section>
                                                 <h2>Phase 3</h2>
-                                                <a href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/tmsr-sf-fill.png"
+                                                <a 
+                                                  href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/tmsr-sf1-schematic.png"
                                                   class="image"><img
                                                   height="65%"
                                                   width="65%"
-                                                  src="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/tmsr-sf-full.png"
-                                                  alt="tmsr full, April Novak"></a>
-                                        </section>
-                                        <section>
-                                                <h2><+Title+></h2>
-                                                <a href="<+hyperlink+>"
-                                                  class="image"><img
-                                                  src="<+img+>"
-                                                  alt="<+note+>"></a>
+                                                  src="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/tmsr-sf1-schematic.png"
+                                                  alt="tmsr full, Yu"></a>
                                         </section>
                                 </section>
 				<section>
-					<section>
-                                                <h2>Coupled Multi-Physics Analysis</h2>
-                                                <br/>
-                                                <p>Severe accident <b>neutronics</b> and
-                                                <b/>thermal hydraulics</b> can 
-                                                be simulated beautifully for simple geometries and well
-                                                studied materials. (below, INL BISON work.)
-                                                </p>
-                                                <a href="http://www.iaea.org/OurWork/ST/NE/NEFW/Technical-Areas/NFC/documents/fuel-engineering/TM-Chengdu-2013/Presentations/Session_1/1.5_Overview_of_BISON_Multidimensional_Fuel_Performance_code_(R._Williamson).pdf"
-                                                  class="image"><img
-                                                  height="362" width="564"
-                                                  src="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/ap1000_moose.png"
-                                                  alt="from INL, Rich Williamson"></a>
-                                        </section>
                                         <section>
                                          <h2>FHR Coupled, Transient Analysis</h2>
                                         <ul>
                                          <li>Collect experimental data</li>
                                          <li>Conduct algebraic, static, and benchmark simulations</li>
+                                         <li>Develop few group parameters, steady state results</li>
                                          <li class="fragment highlight-blue">Develop 0D coupled neutronics/TH model (PyRK)</li>
                                          <li class="fragment highlight-blue">Develop 3D neutronics/TH model</li>
                                          <li>Compare 0D and 3D simulations</li>
@@ -459,10 +437,9 @@ where
                                                 <h2>PyRK</h2>
                                                 <ul>
                                                 <li>6-precursor-group,</li>
-                                                <li>Point Reactor Kinetics model</li>
-                                                <li>And Multi-Point Reactor Kinetics model</li>
+                                                <li>Point and Multi-Point Reactor Kinetics model</li>
                                                 <li>Lumped Parameter thermal hydraulics model</li>
-                                                <li>Finite volume thermal hydraulics model</li>
+                                                <li>With finite volume pebble conduction model</li>
                                                 <li>Object-oriented, geometry and material agnostic framework</li>
                                                 <ul>
                                         </section>
@@ -638,32 +615,6 @@ robustness using nose.
                                                  <li>Ramp Reactivity Insertion, 600pcm over 10s</li>
                                         </section>
                                         <section>
-                                         <h3>Ramp Reactivity Insertion</h3>
-                                                <span class="fragment">
-                                                  <a
-                                                    href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/reactivity.png"
-                                                    class="image"><img
-                                                    height="500"
-                                                    src="./images/reactivity_insertion.png"
-                                                    alt="reactivity insertion"></a>
-                                                </span>
-                                        </section>
-                                        <section>
-                                         <h3>Ramp Reactivity Insertion</h3>
-                                                <span class="fragment">
-                                                <pre><code class="python">
-# External Reactivity
-from reactivity_insertion import RampReactivityInsertion
-rho_ext = RampReactivityInsertion(timer=ti,
-                                  t_start=t_feedback + 10.0*units.seconds,
-                                  t_end=t_feedback + 20.0*units.seconds,
-                                  rho_init=0.0*units.delta_k,
-                                  rho_rise=600.0*units.pcm,
-                                  rho_final=600.0*units.pcm)
-                                                </code></pre>
-                                                </span>
-                                        </section>
-                                        <section>
                                          <h3>Components</h3>
                                                 <span class="fragment">
                                                 <pre><code class="python">
@@ -721,19 +672,28 @@ cool.add_advection('cool', m_flow/n_pebbles, t_inlet, cp=cool.cp)
                                         </section>
                                         <section>
                                          <h3>Ramp Reactivity Insertion</h3>
+                                                <span class="fragment">
                                                   <a
                                                     href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/reactivity.png"
                                                     class="image"><img
-                                                    width="45%"
-                                                    src="./images/reactivity.png"
-                                                    alt="reactivity"></a>
+                                                    height="500"
+                                                    src="./images/reactivity_insertion.png"
+                                                    alt="reactivity insertion"></a>
+                                                </span>
+                                        </section>
+                                        <section>
+                                         <h3>Ramp Reactivity Insertion</h3>
                                                 <span class="fragment">
-                                                  <a
-                                                    href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/power.png"
-                                                    class="image"><img
-                                                    width="43%"
-                                                    src="./images/power.png"
-                                                    alt="pwer"></a>
+                                                <pre><code class="python">
+# External Reactivity
+from reactivity_insertion import RampReactivityInsertion
+rho_ext = RampReactivityInsertion(timer=ti,
+                                  t_start=t_feedback + 10.0*units.seconds,
+                                  t_end=t_feedback + 20.0*units.seconds,
+                                  rho_init=0.0*units.delta_k,
+                                  rho_rise=600.0*units.pcm,
+                                  rho_final=600.0*units.pcm)
+                                                </code></pre>
                                                 </span>
                                         </section>
                                         <section>
@@ -818,33 +778,85 @@ cool.add_advection('cool', m_flow/n_pebbles, t_inlet, cp=cool.cp)
 					</section>
                                         <section>
                                                 <h2>MOOSE Framework</h2>
-                                                <a href="<+hyperlink+>"
-                                                  class="image"><img
-                                                  src="<+img+>"
-                                                  alt="<+note+>"></a>
+                                                <ul>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                </ul>
                                         </section>
                                         <section>
                                                 <h2>PRONGHORN Capabilities</h2>
-                                                <a href="<+hyperlink+>"
-                                                  class="image"><img
-                                                  src="<+img+>"
-                                                  alt="<+note+>"></a>
+                                                <ul>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                        <li><+++></li>
+                                                </ul>
                                         </section>
                                         <section>
                                                 <h2>PRONGHORN PBMR-400 Benchmark</h2>
-                                                <a href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/pronghorn-pbmr-400.png"
+                                                <a href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/pronghorn-bench.png"
                                                   class="image"><img
-                                                  src="<+img+>"
-                                                  src="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/pronghorn-pbmr-400.png"
+                                                  src="/images/pronghorn-bench.png"
                                                   alt="<+note+>"></a>
                                         </section>
                                         <section>
                                                 <h2>Single-Phase, Incompressible, Thermally-Expandable Flow</h2>
-<++>
+                                                <small>
+                                                <h3>Continuity</h3>
+\[
+\begin{align}
+\frac{\partial \epsilon \rho_f}{\partial t}  + \nabla(\epsilon \rho_f \vec{u}) &= 0\\
+\end{align}
+\]
+<br/>
+                                                <h3>Momentum</h3>
+\[
+\begin{align}
+\frac{\partial \epsilon \rho_f}{\partial t}  + \nabla(\epsilon \rho_f \vec{u}\times\vec{u}) &= -\nabla \epsilon P + \epsilon \rho_f \vec{g} - W\rho_f\vec{u}\\
+\end{align}
+\]
+<br/>
+<h3>Energy</h3>
+\[
+\begin{align}
+\frac{\partial\epsilon\rho_fH}{\partial t}  + \nabla(\epsilon\rho_f\vec{u}H) &= q'''
+\end{align}
+\]
+                                                </small>
+</section>
+<section>
+This form of the energy equation can be simplified with the introduction of the specific
+heat capacity, $C_p = \frac{\partial H}{\partial T}$. This nonconservative
+assumption results in a form of the energy equation appropriate for
+incompressible or nearly incompressible flows.
+\[
+\begin{align}
+\rho C_p\frac{\partial T}{\partial t} + \rho C_p \vec{u} \nabla T &= q'''
+\end{align}
+\]
+</section>
+<section>
+These equations are closed by the equation of state. This can be either of the
+form $P=P(\rho, \rho\vec{u}, \rho\vec{E})$ or $\rho=\rho(P, T)$. To ensure
+incompressible, thermally expandable flow, as in Hu, we use a relation between density
+and temperature of the form:
+\[
+\begin{align}
+\frac{\partial \rho}{\partial t} &= \xi \frac{\partial T}{\partial t}\\
+\nabla \rho &= \xi \nabla T
+\end{align}
+\]
                                         </section>
                                         <section>
                                                 <h2>Single-Phase, Incompressible, Thermally-Expandable Flow</h2>
-<++>
+                                                Stabilization (SUPG/PSPG)
+\[
+\left\langle f_{continuity},\psi\right\rangle+\left\langle f_{mom,non},\tau_{pspg}\times\nabla\psi\right\rangle\\
+\left\langle f_{mom},\psi\right\rangle+\left\langle f_{mom,non},\tau_{supg}\times\nabla\psi\right\rangle\\
+\left\langle f_{energy},\psi\right\rangle+\left\langle f_{energy,non},\tau_{supg}\times\nabla\psi\right\rangle
+\]
                                         </section>
                                         <section>
                                                 <h2>Single-Phase, Incompressible, Thermally-Expandable Flow</h2>
