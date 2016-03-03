@@ -731,7 +731,7 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                 </span>
                                         </section>
                                         <section>
-                                         <h3>Ramp Speed Variation</h3>
+                                         <h3>Ramp Duration Variation</h3>
                                                   <a
                                                     href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/pbfhr-rho-speeds.png"
                                                     class="image"><img
@@ -748,7 +748,7 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                 </span>
                                         </section>
                                         <section>
-                                         <h3>Ramp Speed Variation</h3>
+                                         <h3>Ramp Duration Variation</h3>
                                                   <a
                                                     href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/pbfhr-fuel-temp-speeds.png"
                                                     class="image"><img
@@ -779,19 +779,25 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                         <section>
                                                 <h2>MOOSE Framework</h2>
                                                 <ul>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
+                                                        <li>Finite Element 
+                                                                Framework</li>
+                                                        <li>Jacobian-Free 
+                                                                Newton Krylov</li>
+                                                        <li>Adaptively Meshed 
+                                                                geometry 
+                                                                handling</li>
+                                                        <li>Scalability</li>
                                                 </ul>
                                         </section>
                                         <section>
                                                 <h2>PRONGHORN Capabilities</h2>
                                                 <ul>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
-                                                        <li><+++></li>
+                                                        <li>Diffusion 
+                                                                Neutronics</li>
+                                                        <li>Conjugate Heat 
+                                                                Transfer</li>
+                                                        <li>Pebble Bed Darcy 
+                                                                Flow (gaseous)</li>
                                                 </ul>
                                         </section>
                                         <section>
@@ -814,7 +820,8 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                 <h3>Momentum</h3>
 \[
 \begin{align}
-\frac{\partial \epsilon \rho_f}{\partial t}  + \nabla(\epsilon \rho_f \vec{u}\times\vec{u}) &= -\nabla \epsilon P + \epsilon \rho_f \vec{g} - W\rho_f\vec{u}\\
+\frac{\partial \epsilon \rho_f}{\partial t}  + \nabla(\epsilon \rho_f 
+\vec{u}\times\vec{u}) + \nabla \epsilon P - \epsilon \rho_f \vec{g} + W\rho_f\vec{u} =0\\
 \end{align}
 \]
 <br/>
@@ -851,7 +858,10 @@ and temperature of the form:
                                         </section>
                                         <section>
                                                 <h2>Single-Phase, Incompressible, Thermally-Expandable Flow</h2>
-                                                Stabilization (SUPG/PSPG)
+                                                <br/>
+                                                <p>Stabilization 
+                                                (SUPG/PSPG)</p>
+                                                <br/>
 \[
 \left\langle f_{continuity},\psi\right\rangle+\left\langle f_{mom,non},\tau_{pspg}\times\nabla\psi\right\rangle\\
 \left\langle f_{mom},\psi\right\rangle+\left\langle f_{mom,non},\tau_{supg}\times\nabla\psi\right\rangle\\
