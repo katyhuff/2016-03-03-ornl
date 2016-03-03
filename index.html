@@ -203,8 +203,14 @@
                                         <section>
                                                 <h2>PB-FHR Mk1 Design</h2>
                                                 <ul>
+                                                <li>MIT, UCB, UW FHR-IRP collaboration</li>
+						<li>Reactor power: 236MWth</li>
+						<li>Coolant Inlet: 600C</li>
                                                 <li>FLiBe coolant</li>
-                                                <li>Annular Pebble Fuel with TRISO particles</li>
+                                                <li>Annular core</li>
+                                                <li>Annular pebbles with TRISO particles</li>
+                                                <li>Randomly packed bed</li>
+                                                <li>Multi-pass fuel circulation</li>
                                                 <li>High Temperatures </li>
                                                 <li>Strong fuel temperature feedback</li>
                                                 </ul>
@@ -764,6 +770,16 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                     alt="Power pulses"></a>
                                                 </span>
                                         </section>
+					<section>
+                                                  <a
+                                                    href="https://raw.githubusercontent.com/katyhuff/2016-03-03-ornl/gh-pages/images/umeda.png"
+                                                    class="image"><img
+                                                    src="./images/umeda.png"
+                                                    alt="Umeda"></a>
+                                                <span class="fragment">
+                                               \[66J/gUO2 << 1400J/gUO2 \]
+                                                </span>
+                                        </section>
                                 </section>
                                 <section>
                                         <section>
@@ -783,7 +799,7 @@ rho_ext = RampReactivityInsertion(timer=ti,
                                                                 Framework</li>
                                                         <li>Jacobian-Free 
                                                                 Newton Krylov</li>
-                                                        <li>Adaptively Meshed 
+                                                        <li>Adaptively meshed 
                                                                 geometry 
                                                                 handling</li>
                                                         <li>Scalability</li>
@@ -867,6 +883,10 @@ and temperature of the form:
 \left\langle f_{mom},\psi\right\rangle+\left\langle f_{mom,non},\tau_{supg}\times\nabla\psi\right\rangle\\
 \left\langle f_{energy},\psi\right\rangle+\left\langle f_{energy,non},\tau_{supg}\times\nabla\psi\right\rangle
 \]
+                                        </section>
+                                        <section>
+                                                <h2>Single-Phase, Incompressible, Thermally-Expandable Flow</h2>
+						Implementation testing underway.
                                         </section>
 				</section>
 				<section>
